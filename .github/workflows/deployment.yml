@@ -30,8 +30,8 @@ jobs:
       - name: Project build
         run: npm run build
         
-      - name: Where I am
-        run: pwd
+      - name: Move dist file to parent
+        run: mv dist ../
       
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@1
@@ -39,5 +39,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 5db87f304b9e4623fceaf963765ac2b9
           projectName: homepage
-          directory: /src/dist
+          directory: dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
