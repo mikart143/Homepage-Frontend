@@ -32,6 +32,9 @@ jobs:
         
       - name: Move dist file to parent
         run: mv dist ../
+        
+      - name: Add global node
+        run: volta install node
       
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@1
