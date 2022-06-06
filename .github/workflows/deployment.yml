@@ -11,6 +11,9 @@ on:
 jobs:
   deployment:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
     defaults:
       run:
         shell: bash
@@ -33,5 +36,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 5db87f304b9e4623fceaf963765ac2b9
           projectName: homepage
-          directory: src/dist
+          directory: dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
