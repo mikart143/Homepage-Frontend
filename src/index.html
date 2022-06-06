@@ -6,9 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Michał Kruczek</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');">
+    <link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+
+    <link rel="preconnect" 
+      href="https://fonts.googleapis.com" /> 
+
+    <!-- We use the full link to the CSS file in the rest of the tags -->
+    <link rel="preload"
+          as="style"
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" />
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+          media="print" onload="this.media='all'" />
+
+    <noscript>
+      <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" />
+    </noscript>
   </head>
   <body>
     <div id="app"></div>
