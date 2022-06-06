@@ -56,8 +56,8 @@ defineProps({
 }
 .header {
     display: flex;
-  height: 100%;
-  justify-content: center;
+    height: 100%;
+    justify-content: center;
     text-align: center;
     margin: 5px;
 }
