@@ -1,0 +1,32 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Project integrity
+
+on:
+  push:
+    pull_request:
+    - ["*"]
+    paths:
+    - src
+  
+jobs:
+  project-integrity:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: src
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Project setup
+        uses: volta-cli/action@v1
+      
+      - name: Dependancy install
+        run: npm install
+        
+      - name: Project lint
+        run: npm run lint
+      
+      - name: Project build
+        run: npm run build
