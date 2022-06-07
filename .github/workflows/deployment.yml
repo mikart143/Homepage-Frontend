@@ -32,24 +32,12 @@ jobs:
       
       - name: Dependancy install
         run: npm install
+        
+      - name: Project lint
+        run: npm run lint
       
       - name: Project build
         run: npm run build
       
       - name: Publish
         run: npx wrangler pages publish dist --project-name=homepage
-        
-#       - name: Move dist file to parent
-#         run: mv dist ../
-        
-#       - name: Add global node
-#         run: volta install node
-      
-#       - name: Publish to Cloudflare Pages
-#         uses: cloudflare/pages-action@1
-#         with:
-#           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-#           accountId: 5db87f304b9e4623fceaf963765ac2b9
-#           projectName: homepage
-#           directory: dist
-#           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
