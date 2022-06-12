@@ -40,6 +40,10 @@ import accountCircleOutline from '@iconify-icons/material-symbols/account-circle
     </div>
 </template>
 
+<style lang="scss">
+    @import "@/assets/app.scss";
+</style>
+
 <style lang="scss" scoped>
 .logo {
   display: flex;
