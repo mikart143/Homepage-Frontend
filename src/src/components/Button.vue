@@ -1,5 +1,5 @@
 <template>
-    <button>{{text}}</button>
+    <button>{{props.text}}</button>
 </template>
 
 <script setup lang="ts">
