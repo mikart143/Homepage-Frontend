@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { onClickOutside } from '@vueuse/core';
+import { onClickOutside, onKeyStroke } from '@vueuse/core';
 import Button from './Button.vue';
 
 const modal = ref<HTMLElement | null>(null);
@@ -9,6 +9,9 @@ const openModal = () => visible.value = true;
 const closeModal = () => visible.value = false;
 
 onClickOutside(modal, () => visible.value = false);
+onKeyStroke('Escape', () => {
+    closeModal();
+});
 
 defineExpose({
     openModal,
@@ -21,16 +24,18 @@ defineProps({
 </script>
 <template>
     <Teleport to="body">
-        <Transition name="modal-fade">
-            <div ref="modal" class="modal" v-if="visible">
-                <div class="header">
-                    <h3>{{title}}</h3>
-                </div>
-                <div class="body">
-                    <slot/>
-                </div>
-                <div class="footer">
-                    <Button class="button" @click="closeModal" text="Close"/>
+        <Transition>
+            <div class="overlay" v-if="visible">
+                <div ref="modal" class="modal">
+                    <div class="header">
+                        <h3>{{title}}</h3>
+                    </div>
+                    <div class="body">
+                        <slot/>
+                    </div>
+                    <div class="footer">
+                        <Button class="button" @click="closeModal" text="Close"/>
+                    </div>
                 </div>
             </div>
         </Transition>
@@ -45,7 +50,7 @@ defineProps({
     border-radius: 12px;
     box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
     box-sizing: border-box;
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 100%;
     max-width: 1000px;
@@ -75,13 +80,22 @@ defineProps({
     margin-left: auto;
 }
 
-.modal-fade-enter,
-.modal-fade-leave-to {
+.v-enter-from,
+.v-leave-to {
   opacity: 0;
 }
 
-.modal-fade-enter-active,
-.modal-fade-leave-active {
+.v-enter-active,
+.v-leave-active {
   transition: opacity .5s ease;
+}
+.overlay{
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.351);
+    position: fixed;
+    backdrop-filter: blur(2px);
 }
 </style>

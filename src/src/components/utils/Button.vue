@@ -1,15 +1,36 @@
 <template>
-    <button>{{props.text}}</button>
+    <button v-if="!loading" >{{text}}</button>
+    <button v-else > <Icon class="rotate" :icon="cachedRoundedIcon"/></button>
 </template>
 
 <script setup lang="ts">
+import { Icon } from '@iconify/vue';
+import cachedRoundedIcon from '@iconify-icons/material-symbols/cached-rounded';
 
-const props = defineProps({
-    text: String
-});
+withDefaults(defineProps<{
+  text: string,
+  loading?: boolean
+}>(),
+{
+    text: '',
+    loading: false
+}
+);
 </script>
 
 <style scoped lang="scss">
+.rotate {
+  animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
 
 button {
    align-items: center;
@@ -30,7 +51,7 @@ button {
    padding: 1rem 1.2rem;
    text-align: center;
    text-decoration: none;
-   transition: box-shadow .2s,-webkit-box-shadow .2s;
+   transition: box-shadow .2s;
    white-space: nowrap;
    border: 0;
    user-select: none;
@@ -38,6 +59,9 @@ button {
 }
 
 button:hover {
-  box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
+  background-color: rgb(122, 139, 254);
+  color: #fff;
+  box-shadow: rgba(122, 140, 254, 0.50) 0 0 0 3px;
+  transition: box-shadow .2s;
 }
 </style>

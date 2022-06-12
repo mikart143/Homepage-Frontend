@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import {RouterLink, RouterView} from 'vue-router';
 import { Icon } from '@iconify/vue';
+import codeRoundedIcon from '@iconify-icons/material-symbols/code-rounded';
+import homeOutlineRoundedIcon from '@iconify-icons/material-symbols/home-outline-rounded';
+import accountCircleOutline from '@iconify-icons/material-symbols/account-circle-outline';
 
 </script>
 
@@ -9,7 +12,7 @@ import { Icon } from '@iconify/vue';
         <div class="header">
             <div class="logo">
                 <RouterLink :to="{name: 'home'}" custom v-slot="{ navigate }">
-                    <Icon icon="material-symbols:code-rounded" width="125" height="125" @click="navigate" />
+                    <Icon :icon="codeRoundedIcon" width="125" height="125" @click="navigate" />
                 </RouterLink>
         
                 <h1>Michał Kruczek</h1>
@@ -17,18 +20,22 @@ import { Icon } from '@iconify/vue';
             <div class="wrapper">
                 <nav>
                     <RouterLink :to="{name: 'home'}" class="link">
-                        <Icon icon="material-symbols:home-outline-rounded"/>
+                        <Icon :icon="homeOutlineRoundedIcon"/>
                         Home
                     </RouterLink>
                     <RouterLink :to="{name: 'about'}" class="link">
-                        <Icon icon="material-symbols:account-circle-outline"/>
+                        <Icon :icon="accountCircleOutline"/>
                         About
                     </RouterLink>
                 </nav>
             </div>
         </div>
         <div class="view">
-            <RouterView/>
+            <RouterView v-slot="{ Component }">
+                <Transition name="router-fade" mode="out-in">
+                    <component :is="Component" />
+                </Transition>
+            </RouterView>
         </div>
     </div>
 </template>
@@ -65,5 +72,15 @@ import { Icon } from '@iconify/vue';
   align-items: center;
   color: black;
   text-decoration: none;
+}
+
+.router-fade-enter-from,
+.router-fade-leave-to {
+  opacity: 0;
+}
+
+.router-fade-enter-active,
+.router-fade-leave-active {
+  transition: opacity .5s ease;
 }
 </style>
