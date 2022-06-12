@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^8.6.0",
+    "consola": "^2.15.3",
     "pinia": "^2.0.13",
     "vue": "^3.2.33",
     "vue-router": "^4.0.16"
@@ -19,6 +20,7 @@
     "@iconify-icons/material-symbols": "^1.2.3",
     "@iconify/vue": "^3.2.1",
     "@rushstack/eslint-patch": "^1.1.0",
+    "@types/consola": "^2.2.5",
     "@types/jsdom": "^16.2.14",
     "@types/node": "^17.0.41",
     "@vitejs/plugin-vue": "^2.3.1",
@@ -32,6 +34,7 @@
     "sass": "^1.52.3",
     "typescript": "~4.7.3",
     "vite": "^2.9.12",
+    "vite-plugin-checker": "^0.4.6",
     "vitest": "^0.14.2",
     "vue-tsc": "^0.34.7"
   },
