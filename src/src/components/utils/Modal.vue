@@ -48,17 +48,18 @@ defineProps({
     transform: translate(-50%, -50%);
     background-color: #fff;
     border-radius: 12px;
-    box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
+    box-shadow: transparent 0 0 0 3px, rgb(18 18 18 / 10%) 0 6px 20px;
     box-sizing: border-box;
     position: absolute;
     width: 100%;
     height: 100%;
     max-width: 1000px;
     max-height: 400px;
-    display: grid;  
+    display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: [header] auto [body] 1fr [footer] auto;
 }
+
 .header {
     display: flex;
     height: 100%;
@@ -82,19 +83,20 @@ defineProps({
 
 .v-enter-from,
 .v-leave-to {
-  opacity: 0;
+    opacity: 0;
 }
 
 .v-enter-active,
 .v-leave-active {
-  transition: opacity .5s ease;
+    transition: opacity 0.5s ease;
 }
-.overlay{
-    top: 0px;
-    left: 0px;
+
+.overlay {
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(128, 128, 128, 0.351);
+    background-color: rgb(128 128 128 / 35.1%);
     position: fixed;
     backdrop-filter: blur(2px);
 }
