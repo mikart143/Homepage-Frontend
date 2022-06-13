@@ -4,7 +4,9 @@ import { Icon } from '@iconify/vue';
 import codeRoundedIcon from '@iconify-icons/material-symbols/code-rounded';
 import homeOutlineRoundedIcon from '@iconify-icons/material-symbols/home-outline-rounded';
 import accountCircleOutline from '@iconify-icons/material-symbols/account-circle-outline';
-
+console.info('sasd');
+console.log('asd');
+console.trace('tracing');
 </script>
 
 <template>
