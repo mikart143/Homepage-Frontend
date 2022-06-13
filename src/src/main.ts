@@ -1,11 +1,11 @@
 import {createApp} from 'vue';
 import {createPinia} from 'pinia';
 
-import App from './App.vue';
-import router from './router';
-import consola from 'consola';
+import App from '@/App.vue';
+import router from '@/router';
+import loggerSetup from '@/scripts/logger';
 
-consola.wrapAll();
+loggerSetup();
 
 const app = createApp(App);
 
