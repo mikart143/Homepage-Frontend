@@ -21,7 +21,3 @@ defineProps<{
         </AsyncModal>
     </div>
 </template>
-
-<style lang="scss" scoped>
-
-</style>

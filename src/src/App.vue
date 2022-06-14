@@ -43,27 +43,27 @@ console.trace('tracing');
 </template>
 
 <style lang="scss">
-    @import "@/assets/app.scss";
+    @import "@/assets/app";
 </style>
 
 <style lang="scss" scoped>
 .logo {
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
 
-  svg {
-    cursor: pointer;
-  }
+    svg {
+        cursor: pointer;
+    }
 }
 
 .header {
-  padding: 10px;
-  margin-top: 15px;
-  display: flex;
-  align-items: center;
-  box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
-  box-sizing: border-box;
+    padding: 10px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    box-shadow: transparent 0 0 0 3px, rgb(18 18 18 / 10%) 0 6px 20px;
+    box-sizing: border-box;
 }
 
 .main {
@@ -72,21 +72,21 @@ console.trace('tracing');
 }
 
 .link {
-  font-size: 20px;
-  margin-left: 5px;
-  display: inline-flex;
-  align-items: center;
-  color: black;
-  text-decoration: none;
+    font-size: 20px;
+    margin-left: 5px;
+    display: inline-flex;
+    align-items: center;
+    color: black;
+    text-decoration: none;
 }
 
 .router-fade-enter-from,
 .router-fade-leave-to {
-  opacity: 0;
+    opacity: 0;
 }
 
 .router-fade-enter-active,
 .router-fade-leave-active {
-  transition: opacity .5s ease;
+    transition: opacity 0.5s ease;
 }
 </style>
