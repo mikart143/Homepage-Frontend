@@ -2,5 +2,10 @@
     "stylelint.validate": [
         "scss",
         "vue"
-    ]
+    ],
+    "eslint.validate": [
+        "javascript",
+        "typescript",
+        "vue"
+      ]
 }
