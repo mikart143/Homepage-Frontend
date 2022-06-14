@@ -13,20 +13,35 @@ console.trace('tracing');
     <div class="main">
         <div class="header">
             <div class="logo">
-                <RouterLink :to="{name: 'home'}" custom v-slot="{ navigate }">
-                    <Icon :icon="codeRoundedIcon" width="125" height="125" @click="navigate" />
+                <RouterLink
+                    v-slot="{ navigate }"
+                    :to="{name: 'home'}"
+                    custom
+                >
+                    <Icon
+                        :icon="codeRoundedIcon"
+                        width="125"
+                        height="125"
+                        @click="navigate"
+                    />
                 </RouterLink>
         
                 <h1>Michał Kruczek</h1>
             </div>
             <div class="wrapper">
                 <nav>
-                    <RouterLink :to="{name: 'home'}" class="link">
-                        <Icon :icon="homeOutlineRoundedIcon"/>
+                    <RouterLink
+                        :to="{name: 'home'}"
+                        class="link"
+                    >
+                        <Icon :icon="homeOutlineRoundedIcon" />
                         Home
                     </RouterLink>
-                    <RouterLink :to="{name: 'about'}" class="link">
-                        <Icon :icon="accountCircleOutline"/>
+                    <RouterLink
+                        :to="{name: 'about'}"
+                        class="link"
+                    >
+                        <Icon :icon="accountCircleOutline" />
                         About
                     </RouterLink>
                 </nav>
@@ -34,7 +49,10 @@ console.trace('tracing');
         </div>
         <div class="view">
             <RouterView v-slot="{ Component }">
-                <Transition name="router-fade" mode="out-in">
+                <Transition
+                    name="router-fade"
+                    mode="out-in"
+                >
                     <component :is="Component" />
                 </Transition>
             </RouterView>

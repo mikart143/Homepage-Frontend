@@ -1,5 +1,8 @@
 <template>
-    <Icon class="rotate" :icon="cachedRoundedIcon"/>
+    <Icon
+        class="rotate"
+        :icon="cachedRoundedIcon"
+    />
 </template>
 
 <script setup lang="ts">

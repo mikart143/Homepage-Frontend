@@ -1,6 +1,13 @@
 <template>
-    <button v-if="!loading" >{{text}}</button>
-    <button v-else > <Icon class="rotate" :icon="cachedRoundedIcon"/></button>
+    <button v-if="!loading">
+        {{ text }}
+    </button>
+    <button v-else>
+        <Icon
+            class="rotate"
+            :icon="cachedRoundedIcon"
+        />
+    </button>
 </template>
 
 <script setup lang="ts">

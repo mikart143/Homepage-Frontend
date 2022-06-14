@@ -14,9 +14,15 @@ defineProps<{
 <template>
     <div>
         <h3>
-            <Button text="Click Me!" @click="() => modal?.openModal()" />
+            <Button
+                text="Click Me!"
+                @click="() => modal?.openModal()"
+            />
         </h3>
-        <AsyncModal ref="modal" title="Tytuł">
+        <AsyncModal
+            ref="modal"
+            title="Tytuł"
+        >
             body
         </AsyncModal>
     </div>

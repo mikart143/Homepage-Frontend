@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { onClickOutside, onKeyStroke } from '@vueuse/core';
-import Button from './Button.vue';
+import Button from '@/components/utils/Button.vue';
 
 const modal = ref<HTMLElement | null>(null);
 const visible = ref(false);
@@ -18,23 +18,37 @@ defineExpose({
     closeModal
 });
 
-defineProps({
-    title: String
-});
+withDefaults(defineProps<{
+  title: string,
+}>(),
+{
+    title: String,
+}
+);
 </script>
 <template>
     <Teleport to="body">
         <Transition>
-            <div class="overlay" v-if="visible">
-                <div ref="modal" class="modal">
+            <div
+                v-if="visible"
+                class="overlay"
+            >
+                <div
+                    ref="modal"
+                    class="modal"
+                >
                     <div class="header">
-                        <h3>{{title}}</h3>
+                        <h3>{{ title }}</h3>
                     </div>
                     <div class="body">
-                        <slot/>
+                        <slot />
                     </div>
                     <div class="footer">
-                        <Button class="button" @click="closeModal" text="Close"/>
+                        <Button
+                            class="button"
+                            text="Close"
+                            @click="closeModal"
+                        />
                     </div>
                 </div>
             </div>
