@@ -39,7 +39,7 @@
     "vite": "^2.9.12",
     "vite-plugin-checker": "^0.4.6",
     "vitest": "^0.14.2",
-    "vue-tsc": "^0.37.5"
+    "vue-tsc": "^0.37.8"
   },
   "volta": {
     "node": "16.15.1"
