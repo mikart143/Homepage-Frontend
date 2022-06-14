@@ -3,6 +3,7 @@
 name: Project integrity
 
 on:
+  push:
   pull_request:
     paths:
       - 'src/**'
