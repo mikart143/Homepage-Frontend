@@ -1,16 +1,13 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+name: $(SourceBranchName)-$(Date:yyyyMMdd)$(Rev:-r)
+resources:
+- repo: self
 
 trigger:
-- main
+  batch: true
+  branches:
+    include:
+    - master
 
-pool:
-  vmImage: ubuntu-latest
-
-steps:
-
-- script: |
-    curl https://get.volta.sh | bash
-  displayName: 'Installing volta'
+jobs:
+- template: .azure/devops/pipelines/steps/homepage-build-tooling.yml
+- template: .azure/devops/pipelines/steps/homepage-publish.yml
