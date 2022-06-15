@@ -1,3 +1,4 @@
+name: $(SourceBranchName)-$(Date:yyyyMMdd)$(Rev:-r)
 trigger:
   branches:
     include:
@@ -6,7 +7,7 @@ trigger:
     include:
     - src
 pool:
-  vmImage: 'ubutnu-latest'
+  vmImage: 'ubuntu-latest'
 name: $(Build.SourceBranchName).$(Build.BuildId)
 steps: 
   - template: .azure/devops/pipelines/steps/homepage-build-tooling.yml
