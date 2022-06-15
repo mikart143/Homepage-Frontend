@@ -8,7 +8,6 @@ trigger:
     - src
 pool:
   vmImage: 'ubuntu-latest'
-name: $(Build.SourceBranchName).$(Build.BuildId)
 steps: 
   - template: .azure/devops/pipelines/steps/homepage-build-tooling.yml
   - template: .azure/devops/pipelines/steps/homepage-publish.yml
