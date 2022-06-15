@@ -1,12 +1,12 @@
-// import ansi from 'ansi-colors';
-
 export default function setupLogger() {
+    const resetCss = 'background: inherit; color: inherit';
+
     const _log = console.log;
 
     console.log = (message?: any, ...optionalParams: any[]) => {
         const data = timestamp()+'|'+'%cDefault%c'+'|'+message;
         const params = Array.from(optionalParams);
-        params.unshift('background: inherit; color: inherit');
+        params.unshift(resetCss);
         params.unshift('background: grey; color: white');
         return _log.apply(console, [data, ...params]);
     };
@@ -16,7 +16,7 @@ export default function setupLogger() {
     console.info = (message?: any, ...optionalParams: any[]) => {
         const data = timestamp()+'|'+'%cInfo%c'+'|'+message;
         const params = Array.from(optionalParams);
-        params.unshift('background: inherit; color: inherit');
+        params.unshift(resetCss);
         params.unshift('background: blue; color: white');
         return _info.apply(console, [data, ...params]);
     };
@@ -26,7 +26,7 @@ export default function setupLogger() {
     console.error = (message?: any, ...optionalParams: any[]) => {
         const data = timestamp()+'|'+'%cError%c'+'|'+message;
         const params = Array.from(optionalParams);
-        params.unshift('background: inherit; color: inherit');
+        params.unshift(resetCss);
         params.unshift('background: red; color: white');
         return _error.apply(console, [data, ...params]);
     };
@@ -36,7 +36,7 @@ export default function setupLogger() {
     console.debug = (message?: any, ...optionalParams: any[]) => {
         const data = timestamp()+'|'+'%cDebug%c'+'|'+message;
         const params = Array.from(optionalParams);
-        params.unshift('background: inherit; color: inherit');
+        params.unshift(resetCss);
         params.unshift('background: grey; color: white');
         return _debug.apply(console, [data, ...params]);
     };
@@ -46,7 +46,7 @@ export default function setupLogger() {
     console.warn = (message?: any, ...optionalParams: any[]) => {
         const data = timestamp()+'|'+'%cWarn%c'+'|'+message;
         const params = Array.from(optionalParams);
-        params.unshift('background: inherit; color: inherit');
+        params.unshift(resetCss);
         params.unshift('background: yellow; color: black');
         return _warn.apply(console, [data, ...params]);
     };
@@ -56,7 +56,7 @@ export default function setupLogger() {
     console.trace = (message?: any, ...optionalParams: any[]) => {
         const data = timestamp()+'|'+'%cTrace%c'+'|'+message;
         const params = Array.from(optionalParams);
-        params.unshift('background: inherit; color: inherit');
+        params.unshift(resetCss);
         params.unshift('background: black; color: white');
         return _trace.apply(console, [data, ...params]);
     };
