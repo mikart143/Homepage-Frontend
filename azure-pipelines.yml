@@ -1,13 +1,13 @@
-name: $(SourceBranchName)-$(Date:yyyyMMdd)$(Rev:-r)
-resources:
-- repo: self
-
 trigger:
-  batch: true
   branches:
     include:
     - master
-
-jobs:
-- template: .azure/devops/pipelines/steps/homepage-build-tooling.yml
-- template: .azure/devops/pipelines/steps/homepage-publish.yml
+  paths:
+    include:
+    - src
+pool:
+  vmImage: 'ubutnu-latest'
+name: $(Build.SourceBranchName).$(Build.BuildId)
+steps: 
+  - template: .azure/devops/pipelines/steps/homepage-build-tooling.yml
+  - template: .azure/devops/pipelines/steps/homepage-publish.yml
