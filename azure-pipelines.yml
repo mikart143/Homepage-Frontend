@@ -8,6 +8,10 @@ trigger:
     - src
 pool:
   vmImage: 'ubuntu-latest'
+
+variables:
+  BASH_ENV: "~/.profile"
+
 steps: 
   - template: .azure/devops/pipelines/steps/homepage-build-tooling.yml
   - template: .azure/devops/pipelines/steps/homepage-publish.yml
