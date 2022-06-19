@@ -16,7 +16,7 @@
     "vue-router": "^4.0.16"
   },
   "devDependencies": {
-    "@iconify-icons/material-symbols": "^1.2.3",
+    "@iconify-icons/material-symbols": "^1.2.4",
     "@iconify/vue": "^3.2.1",
     "@rushstack/eslint-patch": "^1.1.0",
     "@types/consola": "^2.2.5",
@@ -35,7 +35,7 @@
     "stylelint-config-recommended-scss": "^6.0.0",
     "stylelint-config-recommended-vue": "^1.4.0",
     "stylelint-config-standard-scss": "^4.0.0",
-    "typescript": "~4.7.3",
+    "typescript": "~4.7.4",
     "vite": "^2.9.12",
     "vite-plugin-checker": "^0.4.6",
     "vitest": "^0.14.2",
