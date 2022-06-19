@@ -10,7 +10,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore && stylelint \"**/*.vue\" \"**/*.scss\""
   },
   "dependencies": {
-    "@vueuse/core": "^8.6.0",
+    "@vueuse/core": "^8.7.4",
     "pinia": "^2.0.13",
     "vue": "^3.2.33",
     "vue-router": "^4.0.16"
