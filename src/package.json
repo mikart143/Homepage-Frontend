@@ -16,6 +16,7 @@
     "vue-router": "^4.0.16"
   },
   "devDependencies": {
+    "@iconify-icons/bi": "^1.2.4",
     "@iconify-icons/material-symbols": "^1.2.4",
     "@iconify/vue": "^3.2.1",
     "@rushstack/eslint-patch": "^1.1.0",

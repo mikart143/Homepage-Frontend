@@ -25,5 +25,6 @@ defineProps<{
         >
             body
         </AsyncModal>
+        {{ msg }}
     </div>
 </template>

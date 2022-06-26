@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {RouterLink, RouterView} from 'vue-router';
 import { Icon } from '@iconify/vue';
-import codeRoundedIcon from '@iconify-icons/material-symbols/code-rounded';
+import codeSlash from '@iconify-icons/bi/code-slash';
 import homeOutlineRoundedIcon from '@iconify-icons/material-symbols/home-outline-rounded';
 import accountCircleOutline from '@iconify-icons/material-symbols/account-circle-outline';
 console.info('sasd');
@@ -19,7 +19,7 @@ console.trace('tracing');
                     custom
                 >
                     <Icon
-                        :icon="codeRoundedIcon"
+                        :icon="codeSlash"
                         width="125"
                         height="125"
                         @click="navigate"
@@ -105,6 +105,6 @@ console.trace('tracing');
 
 .router-fade-enter-active,
 .router-fade-leave-active {
-    transition: opacity 0.5s ease;
+    transition: opacity var(--fade-duration) ease;
 }
 </style>

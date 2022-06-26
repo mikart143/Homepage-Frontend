@@ -102,7 +102,7 @@ withDefaults(defineProps<{
 
 .v-enter-active,
 .v-leave-active {
-    transition: opacity 0.5s ease;
+    transition: opacity calc(var(--fade-duration) * 2) ease;
 }
 
 .overlay {
