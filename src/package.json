@@ -19,7 +19,7 @@
     "@iconify-icons/bi": "^1.2.4",
     "@iconify-icons/material-symbols": "^1.2.4",
     "@iconify/vue": "^3.2.1",
-    "@rushstack/eslint-patch": "^1.1.0",
+    "@rushstack/eslint-patch": "^1.1.4",
     "@types/consola": "^2.2.5",
     "@types/jsdom": "^16.2.14",
     "@types/node": "^18.0.0",
