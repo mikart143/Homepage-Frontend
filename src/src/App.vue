@@ -48,13 +48,34 @@ console.trace('tracing');
             </div>
         </div>
         <div class="view">
+            <!-- <RouterView v-slot="{ Component }">
+                <template v-if="Component">
+                    <Transition
+                        name="router-fade"
+                        mode="out-in"
+                    >
+                        <KeepAlive>
+                            <Suspense>
+                                <component :is="Component" />
+                                <template #fallback>
+                                    Loading...
+                                </template>
+                            </Suspense>
+                        </KeepAlive>
+                    </Transition>
+                </template>
+            </RouterView> -->
             <RouterView v-slot="{ Component }">
-                <Transition
-                    name="router-fade"
-                    mode="out-in"
-                >
-                    <component :is="Component" />
-                </Transition>
+                <template v-if="Component">
+                    <Transition
+                        name="router-fade"
+                        mode="out-in"
+                    >
+                        <KeepAlive>
+                            <component :is="Component" />
+                        </KeepAlive>
+                    </Transition>
+                </template>
             </RouterView>
         </div>
     </div>

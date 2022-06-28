@@ -1,13 +1,15 @@
 <template>
     <Icon
         class="rotate"
-        :icon="cachedRoundedIcon"
+        :icon="loadingTwotoneLoop"
+        width="100%"
+        height="100%"
     />
 </template>
 
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
-import cachedRoundedIcon from '@iconify-icons/material-symbols/cached-rounded';
+import loadingTwotoneLoop from '@iconify-icons/line-md/loading-twotone-loop';
 
 </script>
 
