@@ -18,7 +18,7 @@
   "devDependencies": {
     "@iconify-icons/bi": "^1.2.5",
     "@iconify-icons/line-md": "^1.2.9",
-    "@iconify-icons/material-symbols": "^1.2.7",
+    "@iconify-icons/material-symbols": "^1.2.12",
     "@iconify/vue": "^3.2.1",
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/consola": "^2.2.5",
